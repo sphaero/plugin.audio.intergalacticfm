@@ -33,7 +33,7 @@ description=[
 
 for x in range(1,7):
 	img="https://intergalacticfm.com/images/AppIFM"+ str(x) + "-100.png"
-	url="http://radio.intergalacticfm.com/ifm" + str(x) + ".m3u"
+	url="http://radio.intergalacticfm.com/" + str(x) + ".m3u"
 	li = xbmcgui.ListItem(title[x], description[x], thumbnailImage=img)
 	li.setProperty("IsPlayable","true")
 	xbmcplugin.addDirectoryItem(handle=handle,url=url,listitem=li)
