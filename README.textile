@@ -1,6 +1,6 @@
-h1. Intergalactic FM XBMC Plugin
+h1. Intergalactic FM Kodi Plugin
 
-A plugin for XBMC media centers for easy access to the 
+A plugin for Kodi media centers for easy access to the 
 "intergalactic frequencies!":http://intergalacticfm.com
 
 No reason for being stuck on this planet anymore
@@ -11,10 +11,8 @@ Intergalactic FM is the follow-up to the Cybernetic Broadcasting System, an inte
 
 h2. Installation
 
-For now download the zip file through github. Unzip into xbmc/addons/ directory and make sure you 
-rename the directory to "plugin.audio.intergalacticfm". See the 
-"XBMC Wiki article on `userdata`":http://wiki.xbmc.org/?title=Userdata 
-to find the right directory. 
+Just point Kodi to the zip of this repository:
 
-On Raspbmc you'll find the directory at '/home/pi/.xbmc/addons/'
+https://github.com/sphaero/plugin.audio.intergalacticfm/archive/master.zip
 
+Or download the zip and install from the Kodi menu
