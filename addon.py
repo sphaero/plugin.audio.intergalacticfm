@@ -2,7 +2,7 @@ import xbmcplugin,xbmcgui
 
 __addon__ = "Intergalactic FM"
 __addonid__ = "plugin.audio.intergalacticfm"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 def log(msg):
     print "[PLUGIN] '%s (%s)' " % (__addon__, __version__) + str(msg)
@@ -12,29 +12,17 @@ log("Initialized!")
 handle = int(sys.argv[1])
 query = sys.argv[2]
 
-title = [
-    "",
-    "MURDERCAPITAL FM", 
-    "INTERGALACTIC CLASSIX", 
-    "ALIEN BROADCASTERS", 
-    "THE DREAM MACHINE", 
-    "THE GARDEN",
-    ]
-description=[
-    "",
-    "Electro & Wave",
-    "Italo, Disco & Oldschool",
-    "House & Electronics",
-    "Soundtracks & Exotica",
-    "Space & Ambient",
-    ]
+channels = [
+	[ "IFM MAIN", "Electro & Wave", "http://radio.intergalacticfm.com/1.m3u", "https://intergalacticfm.com/images/AppIFM1-100.png" ],
+	[ "DISCO FETISH", "Italo, Disco & Oldschool", "http://radio.intergalacticfm.com/2.m3u", "https://intergalacticfm.com/images/AppIFM2-100.png" ],
+	[ "THE DREAM MACHINE", "Soundtracks & Exotica", "http://radio.intergalacticfm.com/4.m3u", "https://intergalacticfm.com/images/AppIFM4-100.png" ],
+	[ "THE GARDEN", "Space & Ambient", "http://radio.intergalacticfm.com/5.m3u", "https://intergalacticfm.com/images/AppIFM5-100.png" ],
+	[ "INTERGALACTIC TV", "IFM TELEVISION", "rtmp://intergalactic.tv/live/prc", "https://intergalacticfm.com/images/AppIFM3-100.png" ]
+	]
 
-for x in range(1,6):
-    img="https://intergalacticfm.com/images/AppIFM"+ str(x) + "-100.png"
-    url="http://radio.intergalacticfm.com/%d.m3u" %x
-    li = xbmcgui.ListItem(title[x], description[x], thumbnailImage=img)
-    li.setProperty("IsPlayable","true")
-    xbmcplugin.addDirectoryItem(handle=handle,url=url,listitem=li)
+for x in channels:
+	li = xbmcgui.ListItem(x[0], x[1], thumbnailImage=x[3])
+	li.setProperty("IsPlayable","true")
+	xbmcplugin.addDirectoryItem(handle=handle,url=x[2],listitem=li)
 
 xbmcplugin.endOfDirectory(handle)
-
